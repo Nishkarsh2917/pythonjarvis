@@ -1,6 +1,6 @@
 import numpy as np
 
-def numpy_spiral_order(matrix):
+def spiral(matrix):
     result = []
     while matrix.size > 0:
         result.extend(matrix[0].tolist())
@@ -25,5 +25,5 @@ mean = np.mean(array)
 new_array = array[array > mean]
 print("Elements greater than mean ", new_array)
 
-spiralorder = numpy_spiral_order(array)
+spiralorder = spiral(array)
 print("Elements in spiral order", spiralorder)
