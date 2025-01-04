@@ -1,0 +1,6 @@
+import re
+
+text = "Contact us at (123) 456-7890 or 987-654-3210 for more information."
+pattern = r"\(\d{3}\) \d{3}-\d{4}|\d{3}-\d{3}-\d{4}"
+matches = re.findall(pattern, text)
+print(matches)
