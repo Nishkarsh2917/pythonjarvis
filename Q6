@@ -1,0 +1,16 @@
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+
+corpus = ["Data science is amazing", "Machine learning is part of data science"]
+
+ohe = OneHotEncoder()
+one_hot = ohe.fit_transform([[word] for sentence in corpus for word in sentence.split()]).toarray()
+print(one_hot)
+
+cv = CountVectorizer()
+bow = cv.fit_transform(corpus).toarray()
+print(bow)
+
+tfidf = TfidfVectorizer()
+tfidf_vectors = tfidf.fit_transform(corpus).toarray()
+print(tfidf_vectors)
