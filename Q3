@@ -1,0 +1,10 @@
+import spacy
+
+def token_count_component(doc):
+    doc.user_data["token_count"] = len(doc)
+    return doc
+
+nlp = spacy.load("en_core_web_sm")
+nlp.add_pipe("token_count_component", last=True)
+doc = nlp("Customizing a SpaCy pipeline can be very useful.")
+print(doc.user_data["token_count"])
